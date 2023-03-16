@@ -1,4 +1,3 @@
-import $ from "jquery";
 import './App.css';
 import Fetch from "./Fetch";
 import { useState } from "react";
