@@ -1,10 +1,10 @@
 import "./ResultsCard.css";
 
-const ResultsCard = (props) => {
+const ResultsCard = ({ cardTitle, cardSubTitle }) => {
   return (
     <div>
-      <h1>Title</h1>
-      <h3>Artist Name</h3>
+      <h2>{cardTitle}</h2>
+      <h3>{cardSubTitle}</h3>
     </div>
   );
 };

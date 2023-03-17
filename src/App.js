@@ -15,7 +15,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home setSearchQuery={setSearchQuery} />,
+      element: <Home searchQuery={searchQuery} setSearchQuery={setSearchQuery} />,
     },
     {
       path: "/song",
