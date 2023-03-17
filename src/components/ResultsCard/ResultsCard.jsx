@@ -1,6 +1,6 @@
 import "./ResultsCard.css";
 
-const ResultsCard = ({}) => {
+const ResultsCard = (props) => {
   return (
     <div>
       <h1>Title</h1>
