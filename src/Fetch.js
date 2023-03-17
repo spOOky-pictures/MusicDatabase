@@ -1,4 +1,3 @@
-import $ from "jquery";
 import "../src/Fetch.css";
 
 function Fetch({searchQuery}) {
@@ -7,7 +6,7 @@ function Fetch({searchQuery}) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Key': RAPID_API_KEY,
-            'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+            'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
         }
     };
   
@@ -15,14 +14,17 @@ function Fetch({searchQuery}) {
     function randomNumber(min, max) { // Takes min and max parameters 
         return Math.floor(Math.random() * (max - min + 1) + min)
     };
-    const randomKey = randomNumber(0, 24);
-    fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${searchQuery}`, options)
+    const randomKey = randomNumber(0, 4);
+    fetch(`https://shazam.p.rapidapi.com/search?term=${searchQuery}&limit=5`, options)
     .then(response => response.json())
-    .then(response => {
-
-        $("#apiDiv").html(`
-        <h2>${response.data[randomKey].artist.name}</h2>
-        <h4>${response.data[randomKey].title}</h4>
+    .then(data => {
+        console.log("response: ",data)
+        let artist = data.artists.hits[0].artist;
+        let track = data.tracks.hits[randomKey].track
+        document.getElementById("apiDiv").innerHTML = (`
+        <h2>${artist.name}</h2>
+        <h4>${track.title}</h4>
+        <img src="${artist.avatar}" />
         `);
     })
     .catch(err => console.error("Error:", err));

@@ -1,0 +1,37 @@
+.player-card {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 80px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid black;
+    align-items: center;
+    width: 100%;
+    padding: 0 24px;
+    z-index: 300;
+}
+
+.player-card-img {
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+    border-radius: 5px;
+    align-items: flex-end;
+}
+
+.artist-name {
+    font-weight: 700;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.song-name {
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.player-card button {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
