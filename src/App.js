@@ -1,26 +1,40 @@
-import './App.css';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 
-import Fetch from "./Fetch";
+import Home from "./pages/Home/Home";
+import Song from "./pages/Song/Song";
+import Artist from "./pages/Artist/Artist";
+
 import Particle from "./components/Particle";
-import Player from './components/Player/Player';
-import SearchBar from "./components/SearchBar/SearchBar";
+
+// import Fetch from "./Fetch";
+
+import "./App.css";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <Home searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      ),
+    },
+    {
+      path: "/song/:id",
+      element: <Song setSearchQuery={setSearchQuery} />,
+    },
+    {
+      path: "/artist/:id",
+      element: <Artist setSearchQuery={setSearchQuery} />,
+    },
+  ]);
   return (
-    <div>
-      <Container fluid className="main" id="main">
-        <Particle />
-        <Container className="main-content">
-          <SearchBar updateSearchQuery={setSearchQuery} />
-          <h1>Return random result for "{searchQuery}":</h1>
-          {searchQuery && (<div id="apiDiv"><Fetch searchQuery={searchQuery}/></div>)}
-          <Player title="This is the artist" subtitle="This is the song"/>
-        </Container>
-      </Container>
-    </div>
+    <Container fluid className="main" id="main">
+      <RouterProvider router={router} />
+      <Particle />
+    </Container>
   );
 }
 
