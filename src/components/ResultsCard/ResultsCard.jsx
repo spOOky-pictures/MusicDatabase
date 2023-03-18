@@ -9,7 +9,7 @@ const ResultsCard = ({
   redirectId,
 }) => {
   return (
-    <Link to={`/${redirectType}/${redirectId}`}>
+    <Link to={`/${redirectType}/${cardTitle}`}>
       <div className="results-card">
         <img className="results-card__avatar" src={image} />
         <h2>{cardTitle}</h2>

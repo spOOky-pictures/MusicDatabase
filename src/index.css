@@ -12,7 +12,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+h2{
+  margin-bottom: 0;
+  font-weight: 800;
+}
+h4{
+  margin: 0;
+  font-weight: 400;
+}
 #tsparticles {
   position: fixed !important;
   background-repeat: no-repeat !important;
