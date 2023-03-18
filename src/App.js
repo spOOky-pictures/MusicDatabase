@@ -9,6 +9,7 @@ import Grid from "./components/Grid/Grid";
 import ResultsCard from "./components/ResultsCard/ResultsCard";
 import Home from "./pages/Home/Home";
 import Song from "./pages/Song/Song";
+import Artist from "./pages/Artist/Artist";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -18,8 +19,12 @@ function App() {
       element: <Home searchQuery={searchQuery} setSearchQuery={setSearchQuery} />,
     },
     {
-      path: "/song",
+      path: "/song/:id",
       element: <Song setSearchQuery={setSearchQuery} />,
+    },
+    {
+      path: "/artist/:id",
+      element: <Artist setSearchQuery={setSearchQuery} />,
     },
   ]);
   return (

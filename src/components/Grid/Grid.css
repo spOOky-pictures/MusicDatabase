@@ -1,13 +1,14 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-template-rows: repeat(3, 200px);
+  grid-template-rows: repeat(3, auto);
   width: 100%;
+  grid-gap: 15px;
 }
 
 @media only screen and (min-width: 600px) {
   .grid {
     grid-template-columns: repeat(6, auto);
-    grid-template-rows: repeat(1, 200px);
+    grid-template-rows: repeat(1, 500px);
   }
 }

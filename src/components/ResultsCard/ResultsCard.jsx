@@ -1,11 +1,21 @@
 import "./ResultsCard.css";
+import { Link } from "react-router-dom";
 
-const ResultsCard = ({ cardTitle, cardSubTitle }) => {
+const ResultsCard = ({
+  cardTitle,
+  cardSubTitle,
+  image,
+  redirectType,
+  redirectId,
+}) => {
   return (
-    <div>
-      <h2>{cardTitle}</h2>
-      <h3>{cardSubTitle}</h3>
-    </div>
+    <Link to={`/${redirectType}/${redirectId}`}>
+      <div className="results-card">
+        <img className="results-card__avatar" src={image} />
+        <h2>{cardTitle}</h2>
+        <h3>{cardSubTitle}</h3>
+      </div>
+    </Link>
   );
 };
 

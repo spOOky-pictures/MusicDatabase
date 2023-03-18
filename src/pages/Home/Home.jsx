@@ -21,7 +21,6 @@ const Home = ({ searchQuery, setSearchQuery }) => {
     );
     const responseResults = await queryResponse.json();
     setSearchResults(responseResults);
-    console.log(searchResults, responseResults);
     return responseResults;
   };
   useEffect(() => {
@@ -36,12 +35,24 @@ const Home = ({ searchQuery, setSearchQuery }) => {
         <>
           <Grid>
             {searchResults?.artists?.hits.map((artist, index) => (
-              <ResultsCard cardTitle={artist.artist.name} key={`Artist${index}`} />
+              <ResultsCard
+                redirectType="artist"
+                redirectId={artist.artist.adamid}
+                cardTitle={artist.artist.name}
+                key={`Artist${index}`}
+                image={artist.artist.avatar}
+              />
             ))}
           </Grid>
           <Grid>
             {searchResults?.tracks?.hits.map((track, index) => (
-              <ResultsCard cardTitle={track.track.title} key={`Track${index}`} />
+              <ResultsCard
+                redirectType="song"
+                redirectId={track.track.key}
+                cardTitle={track.track.title}
+                key={`Track${index}`}
+                image={track.track.images.coverart}
+              />
             ))}
           </Grid>
         </>

@@ -1,0 +1,8 @@
+.results-card__avatar {
+  max-height: 200px;
+}
+
+.results-card {
+  height: 100%;
+  width: 100%;
+}
