@@ -1,11 +1,13 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useState } from "react";
+import { Container } from "react-bootstrap";
 
 import Home from "./pages/Home/Home";
 import Song from "./pages/Song/Song";
 import Artist from "./pages/Artist/Artist";
 
 import Particle from "./components/Particle";
+
 // import Fetch from "./Fetch";
 
 import "./App.css";
@@ -29,10 +31,10 @@ function App() {
     },
   ]);
   return (
-    <div>
-      <Particle />
+    <Container fluid className="main" id="main">
       <RouterProvider router={router} />
-    </div>
+      <Particle />
+    </Container>
   );
 }
 

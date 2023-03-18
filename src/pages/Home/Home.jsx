@@ -3,6 +3,9 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Grid from "../../components/Grid/Grid";
 import ResultsCard from "../../components/ResultsCard/ResultsCard";
 import { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
+import Player from '../../components/Player/Player';
+
 
 const Home = ({ searchQuery, setSearchQuery }) => {
   const [searchResults, setSearchResults] = useState();
@@ -57,6 +60,9 @@ const Home = ({ searchQuery, setSearchQuery }) => {
           </Grid>
         </>
       )}
+      <Container className="main-content">
+        <Player title="This is the artist" subtitle="This is the song"/>
+      </Container>
     </div>
   );
 };

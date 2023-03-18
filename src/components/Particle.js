@@ -1,14 +1,30 @@
-import React from "react";
+import { useCallback } from "react";
 import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
-function Particle() {
+const Particle = () => {
+  const particlesInit = useCallback(async (engine) => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container);
+  }, []);
+
   return (
     <Particles
       id="tsparticles"
-      params={{
+      init={particlesInit}
+      loaded={particlesLoaded}
+      options={{
+        fpsLimit: 120,
         particles: {
           number: {
-            value: 180,
+            value: 160,
             density: {
               enable: true,
               value_area: 1500,
@@ -20,7 +36,7 @@ function Particle() {
           },
           move: {
             direction: "right",
-            speed: 0.1,
+            speed: 0.05,
           },
           size: {
             value: 1,
@@ -46,10 +62,10 @@ function Particle() {
             },
           },
         },
-        retina_detect: true,
+        detectRetina: true,
       }}
     />
   );
-}
+};
 
 export default Particle;
