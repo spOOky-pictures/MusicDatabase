@@ -1,3 +1,11 @@
+:root{
+  --oxford_blue: #131930;
+  --charcoal: #384558;
+  --satin_gold: #B6A254;
+  --vanilla: #E7E1AA;
+  --cosmic_latte: #F9F6E4;
+  --mauve: #CDB7F6;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,4 +27,19 @@ code {
   background-size: cover !important;
   width: 100%;
   height: 100%;
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  body {
+      background-color: var(--cosmic_latte);
+      color: var(--oxford_blue);
+  }
+}
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: var(--oxford_blue);
+      color: var(--vanilla);
+  }
 }
