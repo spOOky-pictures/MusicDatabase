@@ -8,8 +8,6 @@ import Artist from "./pages/Artist/Artist";
 
 import Particle from "./components/Particle";
 
-// import Fetch from "./Fetch";
-
 import "./App.css";
 
 function App() {
@@ -26,12 +24,14 @@ function App() {
       element: <Song setSearchQuery={setSearchQuery} />,
     },
     {
-      path: "/artist/:id",
+      path: "/artist/:name",
       element: <Artist setSearchQuery={setSearchQuery} />,
     },
   ]);
   return (
     <Container fluid className="main" id="main">
+      <div id="apiDiv">
+      </div>
       <RouterProvider router={router} />
       <Particle />
     </Container>

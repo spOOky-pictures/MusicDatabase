@@ -6,11 +6,10 @@ import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import Player from '../../components/Player/Player';
 
-
 const Home = ({ searchQuery, setSearchQuery }) => {
   const [searchResults, setSearchResults] = useState();
   const getResults = async () => {
-    const RAPID_API_KEY = "b7f3ac9f24msh5e5e5677fc4d6ebp1d5bf6jsn73d13c65097a";
+    const RAPID_API_KEY = "8be18867b6msh6fc8d6aad5acc56p1976f9jsnf9fe02c89bd2";
     const options = {
       method: "GET",
       headers: {
