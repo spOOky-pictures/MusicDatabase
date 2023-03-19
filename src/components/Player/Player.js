@@ -2,10 +2,7 @@ import React, { Component } from 'react'
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { VscDebugContinue } from "react-icons/vsc";
-import { VscDebugStart } from "react-icons/vsc";
 import PlayButton from '../PlayButton/PlayButton';
-
-import { VscDebugPause } from "react-icons/vsc";
 import { VscDebugReverseContinue } from "react-icons/vsc";
 import './Player.css';
 
