@@ -1,18 +1,22 @@
-import React, {Component} from 'react';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import React from 'react';
 
-class ProgressBar extends Component {
-    constructor(props) {
-        super(props);
-    }
+const ProgressBar = ({ progressBarRef }) => {
+    const handleProgressChange = () => {
+        console.log(progressBarRef.current.value);
+    };
 
-    render() {
-        return (
-            <div className='progress'>
-                <ProgressBar now={this.props.now} />
-            </div>
-        )
-    }
-}
-
+    return (
+      <div className="progress">
+        <span className="time current">00:00</span>
+        <input 
+        type="range" 
+        ref={progressBarRef}
+        defaultValue='0'
+        onChange={handleProgressChange}
+        />
+        <span className="time">03:34</span>
+      </div>
+    );
+  };
+  
 export default ProgressBar;

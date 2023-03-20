@@ -6,6 +6,7 @@ import { VscDebugStart } from "react-icons/vsc";
 import { VscDebugPause } from "react-icons/vsc";
 import { VscDebugReverseContinue } from "react-icons/vsc";
 import './Player.css';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 class Player extends Component {
 
@@ -28,9 +29,12 @@ handlePlayerClick = () => {
     return (
       <Card className='player-card'>
         <Card.Img className='player-card-img' variant="left" src={this.props.imgPath} alt="player-card-img" />
-        <Card.Body>
+        <Card.Body className='player-body'>
+            <div className='text'>
             <Card.Title className='artist-name'>{this.props.title}</Card.Title>
             <Card.Subtitle className='song-name'>{this.props.subtitle}</Card.Subtitle>
+            </div>
+            <ProgressBar className='progress' />
             <Button><VscDebugReverseContinue /></Button>
             <Button>{this.state.playing? <VscDebugPause onClick={this.handlePlayerClick} /> : <VscDebugStart onClick={this.handlePlayerClick} />}</Button>
             <Button><VscDebugContinue /></Button>
