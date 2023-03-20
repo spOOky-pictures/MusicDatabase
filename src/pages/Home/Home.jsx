@@ -32,7 +32,7 @@ const Home = ({ searchQuery, setSearchQuery }) => {
   return (
     <div>
       <SearchBar updateSearchQuery={setSearchQuery} />
-      <h1>Hello HOME Page</h1>
+      <h1>Results Page</h1>
       {searchResults && (
         <>
           <Grid>
@@ -60,7 +60,7 @@ const Home = ({ searchQuery, setSearchQuery }) => {
         </>
       )}
       <Container className="main-content">
-        <Player title="This is the artist" subtitle="This is the song"/>
+        <Player title="This is an artist" subtitle="This is the song"/>
       </Container>
     </div>
   );
