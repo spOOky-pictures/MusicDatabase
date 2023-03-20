@@ -20,11 +20,11 @@ function App() {
       ),
     },
     {
-      path: "/song/:id",
+      path: "/song/:songName",
       element: <Song setSearchQuery={setSearchQuery} />,
     },
     {
-      path: "/artist/:name",
+      path: "/artist/:artistName",
       element: <Artist setSearchQuery={setSearchQuery} />,
     },
   ]);
