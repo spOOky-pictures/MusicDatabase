@@ -1,8 +1,8 @@
 import "./SearchBar.css";
 import { useNavigate } from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import $ from 'jquery';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import Preloader from "../../assets/dlf10_OQFbEEEmHE.gif"
 
 const SearchBar = ({ updateSearchQuery }) => {
   //timeout handler - maybe useful later
@@ -14,31 +14,18 @@ const SearchBar = ({ updateSearchQuery }) => {
   //   },800)
   // };
 
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
   const submitHandler = (event) => {
+    setIsLoading(true);
     event.preventDefault();
     updateSearchQuery(event.target.elements.searchQuery.value);
     navigate("/");
   };
 
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    $(document).on('ajaxStart.firstCall', function () {
-      setIsLoading(true);
-    }).on('ajaxStop.firstCall', function () {
-      setIsLoading(false);
-    });
-
-    return () => {
-      $(document).off('ajaxStart.firstCall');
-      $(document).off('ajaxStop.firstCall');
-    };
-  }, []);
-
   return (
     <div className="search-bar">
-      {isLoading && <div id="loading" className="loadOn"></div>}
       <form onSubmit={submitHandler}>
         <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
         <input
@@ -47,6 +34,11 @@ const SearchBar = ({ updateSearchQuery }) => {
           placeholder="Search Here"
         />
       </form>
+      {isLoading && (
+        <div id="loader-container">
+        <img src={Preloader} className="loader" alt="Loading..." />
+        </div>
+    )}
     </div>
   );
 };
