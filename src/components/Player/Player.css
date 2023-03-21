@@ -7,14 +7,14 @@
     border-top: 1px solid black;
     align-items: center;
     width: 100%;
-    padding: 0 24px;
     z-index: 300;
+    background-color: var(--lighter-blue);
+    color: var(--vanilla);
 }
 
 .player-card-img {
     width: 75px;
     height: 75px;
-    margin: 5px;
     border-radius: 5px;
     align-items: flex-end;
 }

@@ -1,3 +1,10 @@
+:root{
+  --dark-blue: #2C3639;
+  --lighter-blue: #3F4E4F;
+  --coffee: #A27B5C;
+  --vanilla: #DCD7C9;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,7 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #131930;
+  background-color: var(--dark-blue);
 }
 
 code {
@@ -14,7 +21,6 @@ code {
 }
 h2{
   margin-bottom: 0;
-  font-weight: 800;
 }
 h4{
   margin: 0;
@@ -22,8 +28,10 @@ h4{
 }
 #tsparticles {
   position: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  width: 100%;
+  background-repeat: no-repeat!important;
+  background-size: cover!important;
   height: 100%;
+  position: fixed!important;
+  width: 100%;
+  z-index: -1;
 }

@@ -18,7 +18,7 @@ const getResults = async () => {
     },
   };
   const queryResponse = await fetch(
-    `https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=${songName}&limit=1`,
+    `https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=song%20${songName}&limit=1`,
     options
   );
   const songData = await queryResponse.json();
