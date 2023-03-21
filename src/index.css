@@ -32,3 +32,18 @@ h4{
   width: 100%;
   z-index: -1;
 }
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  body {
+      background-color: var(--vanilla);
+      color: var(--dark-blue);
+  }
+}
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: var(--dark-blue);
+      color: var(--vanilla);
+  }
+}
