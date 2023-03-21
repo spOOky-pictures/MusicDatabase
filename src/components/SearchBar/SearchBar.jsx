@@ -1,6 +1,8 @@
 import "./SearchBar.css";
 import { useNavigate } from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import $ from 'jquery';
+import React, { useEffect, useState } from 'react';
 
 const SearchBar = ({ updateSearchQuery }) => {
   //timeout handler - maybe useful later
@@ -19,8 +21,24 @@ const SearchBar = ({ updateSearchQuery }) => {
     navigate("/");
   };
 
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    $(document).on('ajaxStart.firstCall', function () {
+      setIsLoading(true);
+    }).on('ajaxStop.firstCall', function () {
+      setIsLoading(false);
+    });
+
+    return () => {
+      $(document).off('ajaxStart.firstCall');
+      $(document).off('ajaxStop.firstCall');
+    };
+  }, []);
+
   return (
     <div className="search-bar">
+      {isLoading && <div id="loading" className="loadOn"></div>}
       <form onSubmit={submitHandler}>
         <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
         <input
