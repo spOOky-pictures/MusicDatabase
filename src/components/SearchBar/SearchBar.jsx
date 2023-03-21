@@ -5,28 +5,32 @@ import React, { useState } from 'react';
 import Preloader from "../../assets/dlf10_OQFbEEEmHE.gif"
 
 const SearchBar = ({ updateSearchQuery }) => {
-  //timeout handler - maybe useful later
-  // let deBounceTimer;
-  // const changeHandler = (event) => {
-  //   clearTimeout(deBounceTimer);
-  //   deBounceTimer = setTimeout(() => {
-  //     updateSearchQuery(event.target.value);
-  //   },800)
-  // };
 
-  const [isLoading, setIsLoading] = useState(false);
+  const RAPID_API_KEY = "8be18867b6msh6fc8d6aad5acc56p1976f9jsnf9fe02c89bd2";
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": RAPID_API_KEY,
+      "X-RapidAPI-Host": "shazam.p.rapidapi.com",
+    },
+  };
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const submitHandler = (event) => {
-    setIsLoading(true);
+  const handleSearch = (event) => {
     event.preventDefault();
     updateSearchQuery(event.target.elements.searchQuery.value);
+    setIsLoading(true);
+    fetch(`https://shazam.p.rapidapi.com/search?term=${updateSearchQuery}&limit=5`, options)
+    .then(response => {
+      setIsLoading(false);
+    });
     navigate("/");
-  };
+  }
 
   return (
     <div className="search-bar">
-      <form onSubmit={submitHandler}>
+      <form onSubmit={handleSearch}>
         <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
         <input
           name="searchQuery"
@@ -34,11 +38,10 @@ const SearchBar = ({ updateSearchQuery }) => {
           placeholder="Search Here"
         />
       </form>
-      {isLoading && (
-        <div id="loader-container">
-        <img src={Preloader} className="loader" alt="Loading..." />
-        </div>
-    )}
+      <div className={isLoading ? "loader-container show" : "loader-container"}>
+      {isLoading ? <img className="loader" src={Preloader} alt="Loading..." /> : null}
+      </div>
+    {console.log("stop", isLoading)}
     </div>
   );
 };
