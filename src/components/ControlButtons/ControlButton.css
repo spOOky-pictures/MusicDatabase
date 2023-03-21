@@ -1,0 +1,13 @@
+.control-button {
+    border: 1px solid black;
+}
+
+.reverse-continue {
+    border-radius: 40%;
+    cursor: pointer;
+}
+
+.continue {
+    border-radius: 40%;
+    cursor: pointer;
+}

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 const Song = ({ setSearchQuery }) => {
 const { songName } = useParams();
+const { artistName } = useParams();
 const [songResults, setSongResults] = useState();
 console.log("ha: ",useParams().songName)
 const getResults = async () => {
@@ -18,7 +19,7 @@ const getResults = async () => {
     },
   };
   const queryResponse = await fetch(
-    `https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=song%20${songName}&limit=1`,
+    `https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=${artistName}%20song%20${songName}&limit=1`,
     options
   );
   const songData = await queryResponse.json();
