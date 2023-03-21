@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { VscDebugContinue } from "react-icons/vsc";
-import { VscDebugStart } from "react-icons/vsc";
-import { VscDebugPause } from "react-icons/vsc";
+import PlayButton from '../PlayButton/PlayButton';
 import { VscDebugReverseContinue } from "react-icons/vsc";
 import './Player.css';
 
@@ -32,7 +31,7 @@ handlePlayerClick = () => {
             <Card.Title className='artist-name'>{this.props.title}</Card.Title>
             <Card.Subtitle className='song-name'>{this.props.subtitle}</Card.Subtitle>
             <Button><VscDebugReverseContinue /></Button>
-            <Button>{this.state.playing? <VscDebugPause onClick={this.handlePlayerClick} /> : <VscDebugStart onClick={this.handlePlayerClick} />}</Button>
+            <PlayButton />
             <Button><VscDebugContinue /></Button>
         </Card.Body>
       </Card>
