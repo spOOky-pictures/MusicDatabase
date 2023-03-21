@@ -18,7 +18,7 @@ const getResults = async () => {
     },
   };
   const queryResponse = await fetch(
-    `https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=${artistName}&limit=1`,
+    `https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=artist%20${artistName}&limit=1`,
     options
   );
   const artistData = await queryResponse.json();

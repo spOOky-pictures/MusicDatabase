@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
+import "./components/Fontawesome";
 
 import Home from "./pages/Home/Home";
 import Song from "./pages/Song/Song";
@@ -30,8 +31,6 @@ function App() {
   ]);
   return (
     <Container fluid className="main" id="main">
-      <div id="apiDiv">
-      </div>
       <RouterProvider router={router} />
       <Particle />
     </Container>
