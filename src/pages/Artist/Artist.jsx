@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Artist = ({ setSearchQuery }) => {
-const { name } = useParams();
+const { artistName } = useParams();
 
 const [artistResults, setArtistResults] = useState();
 const getResults = async () => {
@@ -18,7 +18,7 @@ const getResults = async () => {
     },
   };
   const queryResponse = await fetch(
-    `https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=${name}&limit=1`,
+    `https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=artist%20${artistName}&limit=1`,
     options
   );
   const artistData = await queryResponse.json();
@@ -28,12 +28,12 @@ const getResults = async () => {
 useEffect(() => {
   const getSearchResults = async () => await getResults();
   getSearchResults();
-}, [name]);
+}, [artistName]);
 
     return (
       <div>
         <SearchBar updateSearchQuery={setSearchQuery} />
-        <h1>Hello Artist Page {name}</h1>
+        <h1>Hello Artist Page {artistName}</h1>
         {artistResults && (
           <p dangerouslySetInnerHTML={{__html: artistResults.excerpt}}></p>
         )}

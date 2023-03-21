@@ -1,5 +1,6 @@
 import "./SearchBar.css";
 import { useNavigate } from "react-router-dom";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 const SearchBar = ({ updateSearchQuery }) => {
   //timeout handler - maybe useful later
@@ -21,14 +22,12 @@ const SearchBar = ({ updateSearchQuery }) => {
   return (
     <div className="search-bar">
       <form onSubmit={submitHandler}>
+        <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
         <input
           name="searchQuery"
           className="search-bar__input"
           placeholder="Search Here"
         />
-        <button className="search-bar__button" type="Submit">
-          Search!
-        </button>
       </form>
     </div>
   );
