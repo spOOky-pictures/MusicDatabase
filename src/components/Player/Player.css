@@ -1,4 +1,4 @@
-.player-card {
+.music-player {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     height: 80px;
     display: flex;
@@ -37,7 +37,7 @@
     margin-left: 10px;
 }
 
-.player-card button {
+.music-player button {
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 5px;
