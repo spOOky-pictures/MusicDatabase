@@ -65,7 +65,7 @@ const Song = ({ setSearchQuery }) => {
       <>
         <div className="songSection">
           <img className="artist__avatar" src={songData.images.background} />
-          <div>
+          <div className="songInfo">
             <h1 className="song-title">{songData.title}</h1>
             <h2>Artist: {songData.subtitle}</h2>
             <h2>Genre: {songData.genres.primary}</h2>
@@ -76,9 +76,9 @@ const Song = ({ setSearchQuery }) => {
         <audio controls preload="none">
           <source src={songData.hub.actions[1].uri} type="audio/mp4" />
         </audio>
-        <h2>Watch the video on YouTube!:</h2>
+        <h2 className="youtubeHeading" >Watch the video on YouTube!:</h2>
         {filteredSections.length !== 0 && (
-          <ReactPlayer url={filteredSections[0].youtubeurl.actions[0].uri} />
+          <ReactPlayer className="youtubePlayer" url={filteredSections[0].youtubeurl.actions[0].uri} />
         )}
       </>
     );

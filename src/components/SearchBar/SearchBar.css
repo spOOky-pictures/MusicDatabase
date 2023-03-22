@@ -4,18 +4,19 @@ form{
   margin: 0 auto;
   align-items: center;
   justify-content: end;
+  position: relative;
 }
-.fa-solid {
+/* .fa-solid {
   display: block;
   color: red;
-  position: absolute;
   font-size: 20px;
-}
-form svg{
+} */
+.searchIcon{
   color: rgb(220, 215, 201, 30%);
   position: absolute;
   font-size: 20px;
   padding-right: 15px;
+  right: 10px;
 }
 .search-bar {
   width: 100%;
@@ -23,6 +24,7 @@ form svg{
   padding: 10px;
   margin: 0 auto;
   font-size: 16px;
+  box-sizing: border-box;
 }
 .search-bar__input {
   width: 100%;
@@ -62,5 +64,27 @@ form svg{
 }
 
 .homeButton {
-  border: solid black 2px;
+text-decoration: none;
+padding: 0 10px;
+font-size: 30px;
 }
+
+.homeButton:visited {
+color: antiquewhite;
+}
+  
+
+@media only screen and (max-width: 600px) {
+  .search-bar__input {
+    font-size: larger;
+    padding: 15px;
+    width: unset;
+    flex: 1;
+  }
+  form{
+    width: 100%;
+    justify-content: space-between;
+  }
+
+
+  }
