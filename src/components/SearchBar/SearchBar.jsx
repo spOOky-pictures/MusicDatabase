@@ -32,8 +32,11 @@ const SearchBar = ({ updateSearchQuery }) => {
   return (
     <div className="search-bar">
       <form onSubmit={handleSearch}>
-        <Link to="/" className="homeButton">Home</Link>
-        <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+        <Link to="/" className="homeButton">HOME</Link>
+        <FontAwesomeIcon
+          className="searchIcon"
+          icon="fa-solid fa-magnifying-glass"
+        />
         <input
           name="searchQuery"
           className="search-bar__input"
