@@ -1,0 +1,25 @@
+.songPageContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.songSection {
+  display: flex;
+}
+
+.artist__avatar {
+  max-height: 200px;
+  width: 200px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 25px;
+}
+
+.song-title {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 52px;
+line-height: 63px;
+color: #A27B5C;
+}
