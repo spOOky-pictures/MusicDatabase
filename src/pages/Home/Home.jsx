@@ -59,9 +59,6 @@ const Home = ({ searchQuery, setSearchQuery }) => {
           </Grid>
         </>
       )}
-      <Container className="main-content">
-        <Player title="This is an artist" subtitle="This is the song"/>
-      </Container>
     </div>
   );
 };
