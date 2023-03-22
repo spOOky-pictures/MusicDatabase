@@ -1,21 +1,36 @@
 .songPageContent {
   display: flex;
   flex-direction: column;
+  max-width: 1480px;
+  margin: 0 auto;
 }
 
 .songSection {
   display: flex;
+  padding: 10px;
+}
+
+.songInfo {
+  padding-left: 30px;
 }
 
 .artist__avatar {
-  max-height: 200px;
-  width: 200px;
+  width: 400px;
   object-fit: cover;
   object-position: top;
   border-radius: 25px;
 }
 
 .song-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 63px;
+  color: #a27b5c;
+}
+
+
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
@@ -23,6 +38,48 @@ font-size: 52px;
 line-height: 63px;
 color: #A27B5C;
 }
+
+.youtubeHeading {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.youtubePlayer {
+  width: 100% !important;
+  min-height: 640px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  
+  .songPageContent {
+    padding: 0 20px;
+    text-align: center;
+  }
+  .songSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .youtubePlayer {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .song-title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 63px;
+  }
+  .artist__avatar {
+    max-height: unset;
+    width: 100%;
+  }
+
+  .songInfo {
+    padding: 0;
+  }
+  
+ /* PLAYER */
 
 .player {
   display: block;
