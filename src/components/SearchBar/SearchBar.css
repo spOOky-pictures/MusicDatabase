@@ -60,3 +60,7 @@ form svg{
   height: 400px;
   width: 400px;
 }
+
+.homeButton {
+  border: solid black 2px;
+}
