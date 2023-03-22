@@ -1,9 +1,7 @@
 import "./Song.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import Player from "../../components/Player/Player";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ReactPlayer from "react-player";
 
 const Song = ({ setSearchQuery }) => {
   const { songId } = useParams();
@@ -31,7 +29,7 @@ const Song = ({ setSearchQuery }) => {
   // };
 
   const getSongData = async () => {
-    const RAPID_API_KEY = "8be18867b6msh6fc8d6aad5acc56p1976f9jsnf9fe02c89bd2";
+    const RAPID_API_KEY = "b0a488d969msh0a425f0258f176bp14aaefjsn8a4e011bc7d4";
     const options = {
       method: "GET",
       headers: {
@@ -63,9 +61,8 @@ const Song = ({ setSearchQuery }) => {
             <h2>Artist: {songData.subtitle}</h2>
           </div>
         </div>
-        {/* <ReactPlayer url={songData.hub.actions[1].uri}/> */}
-        <audio controls preload="none">
-          <source src={songData.hub.actions[1].uri} type="audio/mp4" />
+        <audio className="player" controls preload="none">
+          <source className="player-control" src={songData.hub.actions[1].uri} type="audio/mp4" />
         </audio>
       </>
     );
@@ -79,11 +76,6 @@ const Song = ({ setSearchQuery }) => {
         {!songData && <p>Loading</p>}
         {songData && renderSongData()}
       </div>
-
-      {/* {songResults && (
-        <p dangerouslySetInnerHTML={{ __html: songResults.excerpt }}></p>
-      )} */}
-      <Player />
     </div>
   );
 };

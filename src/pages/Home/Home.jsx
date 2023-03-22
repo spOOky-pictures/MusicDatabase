@@ -4,12 +4,14 @@ import Grid from "../../components/Grid/Grid";
 import ResultsCard from "../../components/ResultsCard/ResultsCard";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import Player from '../../components/Player/Player';
 
 const Home = ({ searchQuery, setSearchQuery }) => {
   const [searchResults, setSearchResults] = useState();
+  const [currentTrack, setCurrentTrack] = useState();
+  const [playing, setPlaying] = useState(false);
+
   const getResults = async () => {
-    const RAPID_API_KEY = "8be18867b6msh6fc8d6aad5acc56p1976f9jsnf9fe02c89bd2";
+    const RAPID_API_KEY = "b0a488d969msh0a425f0258f176bp14aaefjsn8a4e011bc7d4";
     const options = {
       method: "GET",
       headers: {
@@ -25,10 +27,16 @@ const Home = ({ searchQuery, setSearchQuery }) => {
     setSearchResults(responseResults);
     return responseResults;
   };
+
+  const handlePlayerClick = () => {
+    setPlaying(!playing);
+  };
+
   useEffect(() => {
     const getSearchResults = async () => await getResults();
     if (searchQuery !== "") getSearchResults();
   }, [searchQuery]);
+  
   return (
     <div>
       <SearchBar updateSearchQuery={setSearchQuery} />
@@ -54,13 +62,13 @@ const Home = ({ searchQuery, setSearchQuery }) => {
                 cardTitle={track.track.title}
                 key={`Track${index}`}
                 image={track.track.images.coverart}
+                handleTrackClick={() => setCurrentTrack(track)}
               />
             ))}
           </Grid>
         </>
       )}
       <Container className="main-content">
-        <Player title="This is an artist" subtitle="This is the song"/>
       </Container>
     </div>
   );
