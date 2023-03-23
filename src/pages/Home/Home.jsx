@@ -33,18 +33,6 @@ const Home = ({ searchQuery, setSearchQuery }) => {
       <SearchBar updateSearchQuery={setSearchQuery} />
       {searchResults && (
         <>
-          <h1>Artist:</h1>
-          <Grid>
-            {searchResults?.artists?.hits.map((artist, index) => (
-              <ResultsCard
-                redirectType="artist"
-                redirectId={artist.artist.adamid}
-                cardTitle={artist.artist.name}
-                key={`Artist${index}`}
-                image={artist.artist.avatar}
-              />
-            ))}
-          </Grid>
           <h1>Tracks:</h1>
           <Grid>
             {searchResults?.tracks?.hits.map((track, index) => (
@@ -54,6 +42,18 @@ const Home = ({ searchQuery, setSearchQuery }) => {
                 cardTitle={track.track.title}
                 key={`Track${index}`}
                 image={track.track.images.coverart}
+              />
+            ))}
+          </Grid>
+          <h1>Artist:</h1>
+          <Grid>
+            {searchResults?.artists?.hits.map((artist, index) => (
+              <ResultsCard
+                redirectType="artist"
+                redirectId={artist.artist.adamid}
+                cardTitle={artist.artist.name}
+                key={`Artist${index}`}
+                image={artist.artist.avatar}
               />
             ))}
           </Grid>

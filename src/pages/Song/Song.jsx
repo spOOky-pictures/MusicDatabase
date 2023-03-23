@@ -56,9 +56,12 @@ const Song = ({ setSearchQuery }) => {
         <audio className="player" controls preload="none">
           <source className="player-control" src={songData.hub.actions[1].uri} type="audio/mp4" />
         </audio>
-        <h2 className="youtubeHeading" >Watch the video on YouTube!:</h2>
+        <h2 className="youtubeHeading">Watch the video on YouTube!:</h2>
         {filteredSections.length !== 0 && (
-          <ReactPlayer className="youtubePlayer" url={filteredSections[0].youtubeurl.actions[0].uri} />
+          <ReactPlayer
+            className="youtubePlayer"
+            url={filteredSections[0].youtubeurl.actions[0].uri}
+          />
         )}
       </>
     );
