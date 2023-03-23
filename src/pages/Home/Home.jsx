@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const Home = ({ searchQuery, setSearchQuery }) => {
   const [searchResults, setSearchResults] = useState();
   const getResults = async () => {
-    const RAPID_API_KEY = "7b3e3a16eemsh1d5ca9221cc5af1p13e3dajsnae28b950f9b1";
+    const RAPID_API_KEY = "b0a488d969msh0a425f0258f176bp14aaefjsn8a4e011bc7d4";
     const options = {
       method: "GET",
       headers: {
