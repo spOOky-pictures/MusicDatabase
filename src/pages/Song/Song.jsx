@@ -31,7 +31,7 @@ const Song = ({ setSearchQuery }) => {
   // };
 
   const getSongData = async () => {
-    const RAPID_API_KEY = "7b3e3a16eemsh1d5ca9221cc5af1p13e3dajsnae28b950f9b1";
+    const RAPID_API_KEY = "b0a488d969msh0a425f0258f176bp14aaefjsn8a4e011bc7d4";
     const options = {
       method: "GET",
       headers: {
@@ -76,9 +76,12 @@ const Song = ({ setSearchQuery }) => {
         <audio controls preload="none">
           <source src={songData.hub.actions[1].uri} type="audio/mp4" />
         </audio>
-        <h2 className="youtubeHeading" >Watch the video on YouTube!:</h2>
+        <h2 className="youtubeHeading">Watch the video on YouTube!:</h2>
         {filteredSections.length !== 0 && (
-          <ReactPlayer className="youtubePlayer" url={filteredSections[0].youtubeurl.actions[0].uri} />
+          <ReactPlayer
+            className="youtubePlayer"
+            url={filteredSections[0].youtubeurl.actions[0].uri}
+          />
         )}
       </>
     );
