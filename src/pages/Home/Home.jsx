@@ -4,7 +4,6 @@ import Grid from "../../components/Grid/Grid";
 import ResultsCard from "../../components/ResultsCard/ResultsCard";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import Player from "../../components/Player/Player";
 
 const Home = ({ searchQuery, setSearchQuery }) => {
   const [searchResults, setSearchResults] = useState();

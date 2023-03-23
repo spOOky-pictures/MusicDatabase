@@ -48,7 +48,6 @@ const SearchBar = ({ updateSearchQuery }) => {
           <img className="loader" src={Preloader} alt="Loading..." />
         ) : null}
       </div>
-      {console.log("stop", isLoading)}
     </div>
   );
 };
