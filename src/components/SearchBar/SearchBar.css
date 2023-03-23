@@ -14,8 +14,7 @@ form{
   right: 10px;
 }
 .search-bar {
-  width: 600px;
-  max-width: 600px;
+  width: 100%;
   max-height: 60px;
   padding: 10px;
   margin: 0 auto;
@@ -58,16 +57,11 @@ form{
   height: 400px;
   width: 400px;
 }
-div:has(.homeButton){
-  display: flex;
-  align-items: center;
-}
+
 .homeButton {
 text-decoration: none;
 padding: 0 10px;
 font-size: 30px;
-text-align: initial; 
-display: initial;
 }
 .homeButton:visited {
 color: antiquewhite;
@@ -75,16 +69,6 @@ color: antiquewhite;
   
 
 @media only screen and (max-width: 600px) {
-  div:has(.homeButton){
-    flex-direction: column;
-  }
-  .homeButton {
-    text-align: center;
-    display: block;
-  }
-  .search-bar{
-    width: 100%;
-  }
   .search-bar__input {
     font-size: larger;
     padding: 15px;

@@ -30,10 +30,9 @@ const SearchBar = ({ updateSearchQuery }) => {
   };
 
   return (
-    <>
-    <Link to="/" className="homeButton">HOME</Link>
     <div className="search-bar">
       <form onSubmit={handleSearch}>
+        <Link to="/" className="homeButton">HOME</Link>
         <FontAwesomeIcon
           className="searchIcon"
           icon="fa-solid fa-magnifying-glass"
@@ -50,7 +49,6 @@ const SearchBar = ({ updateSearchQuery }) => {
         ) : null}
       </div>
     </div>
-    </>
   );
 };
 
