@@ -1,6 +1,5 @@
 import "./Artist.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import Player from "../../components/Player/Player";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -37,7 +36,6 @@ useEffect(() => {
         {artistResults && (
           <p dangerouslySetInnerHTML={{__html: artistResults.excerpt}}></p>
         )}
-        <Player />
       </div>
     )
 }

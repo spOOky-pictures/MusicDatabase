@@ -1,13 +1,11 @@
 import "./Song.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import Player from "../../components/Player/Player";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 
 const Song = ({ setSearchQuery }) => {
   const { songId } = useParams();
-  const { artistName } = useParams();
   const [songData, setSongData] = useState();
   let filteredSections;
   // Wikipedia call - not used
