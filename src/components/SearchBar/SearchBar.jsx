@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Preloader from "../../assets/dlf10_OQFbEEEmHE.gif";
 
 const SearchBar = ({ updateSearchQuery }) => {
-  const RAPID_API_KEY = "b0a488d969msh0a425f0258f176bp14aaefjsn8a4e011bc7d4";
+  const RAPID_API_KEY = "bbfd93fea6mshb8c0e61137028e8p1d542ejsnaaa4222ae123";
   const options = {
     method: "GET",
     headers: {
