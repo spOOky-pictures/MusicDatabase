@@ -38,6 +38,7 @@ const SearchBar = ({ updateSearchQuery }) => {
           icon="fa-solid fa-magnifying-glass"
         />
         <input
+          id="searchBar"
           name="searchQuery"
           className="search-bar__input"
           placeholder="Search Here"
