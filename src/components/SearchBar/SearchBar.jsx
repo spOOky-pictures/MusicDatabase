@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Preloader from "../../assets/dlf10_OQFbEEEmHE.gif";
 
 const SearchBar = ({ updateSearchQuery }) => {
-  const RAPID_API_KEY = "8be18867b6msh6fc8d6aad5acc56p1976f9jsnf9fe02c89bd2";
+  const RAPID_API_KEY = "b0a488d969msh0a425f0258f176bp14aaefjsn8a4e011bc7d4";
   const options = {
     method: "GET",
     headers: {
@@ -30,9 +30,10 @@ const SearchBar = ({ updateSearchQuery }) => {
   };
 
   return (
+    <>
+    <Link to="/" className="homeButton">HOME</Link>
     <div className="search-bar">
       <form onSubmit={handleSearch}>
-        <Link to="/" className="homeButton">HOME</Link>
         <FontAwesomeIcon
           className="searchIcon"
           icon="fa-solid fa-magnifying-glass"
@@ -48,8 +49,8 @@ const SearchBar = ({ updateSearchQuery }) => {
           <img className="loader" src={Preloader} alt="Loading..." />
         ) : null}
       </div>
-      {console.log("stop", isLoading)}
     </div>
+    </>
   );
 };
 
