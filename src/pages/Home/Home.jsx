@@ -32,9 +32,9 @@ const Home = ({ searchQuery, setSearchQuery }) => {
   return (
     <div>
       <SearchBar updateSearchQuery={setSearchQuery} />
-      <h1>Results Page</h1>
       {searchResults && (
         <>
+          <h1>Artist:</h1>
           <Grid>
             {searchResults?.artists?.hits.map((artist, index) => (
               <ResultsCard
@@ -46,6 +46,7 @@ const Home = ({ searchQuery, setSearchQuery }) => {
               />
             ))}
           </Grid>
+          <h1>Tracks:</h1>
           <Grid>
             {searchResults?.tracks?.hits.map((track, index) => (
               <ResultsCard

@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Music Database
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This project was our group's opportunity to work on a coding project collaboratively, it's been a fantastic opportunity to become better rehearsed with using github branches and pull requests, as well as Netlify. 
 
-In the project directory, you can run:
+The deployed application itself was built on the idea of creating a Music Database where the user can search for information on their favourite Artists, Songs or Albums!
+The premise was to keep it simple, clean and minimalistic, filled with the information for the user to read.
 
-### `npm start`
+We wanted to build an easy to navigate interface that would provide the user with multiple options for their searches, and on their chosen page - give them all the information, as well as Audio and videos. visual guidance necessary to make the dish. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project was our first real deep dive into React, which has proven to be a great tool in designing and creating a webpage, however that did not come without troubles.
+Starting with major API problems, as we could not fine an API to give us enough information to complete our website, or creating react components and inserting them into relevant pages.The biggest challenge - which has also been very rewarding, has been learning to divide and work on tasks as a group.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+The deployed application can be viewed via this [link](https://delightful-elf-e58a5c.netlify.app/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+On load the page will display as follows:  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Landing page](/src/assets/images/homepage%20.jpg)  
 
-### `npm run eject`
+This is the application landing page, on load, the user sees the search bar and an empty background for a minimalistic look.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The user can then type in an artist or song name, and hit enter in order to get the results!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The page will then generate results cards using the Shazam API for most relevant artists and songs based on the inputted search, displaying the image and title of the said artist/song on the screen, as shown below:  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Search results](/src/assets/images/resultscards.JPG)  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Whilst the API is loading the following loading GIF is shown on screen:  
 
-## Learn More
+![Loading image](/src/assets/dlf10_OQFbEEEmHE.gif)  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The user can then select one of the cards that they feel was the most relevant to their search query. Which will then bring back data relevant to that song, for example clicking 'Eminem's Mockingbird' card brings back:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Song Page](/src/assets/images/songresult%20.jpg)  
 
-### Code Splitting
+The user is provided with the artist's image, artist name, genre of the song, album it comes from and release year.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Undeaneath it is a preview audio player, that allows the user to listen to a snippet of the song, as well as a full YouTube video of the song beneath it.
 
-### Analyzing the Bundle Size
+From here, the user has two options, either clicking the 'HOME' button, which will return the user to the previous search results screen, if the clicked song was not the one they were interested in.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Search Bar](/src/assets/images/searchbar%20.jpg)  
 
-### Making a Progressive Web App
+Otherwise, they can use the search bar at the top to insert a new search parameter, which will take them to the results page with new data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Search Bar](/src/assets/images/2ndsearch%20.jpg)  
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+We suggest to search for 'Eminem' to get full options, however feel free to tes yourself!
 
-### Deployment
+## Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Collaborators:  
+[David](https://github.com/Davvid96)  
+[Elvis](https://github.com/NukeTurtle)  
+[Daniel](https://github.com/danielpsnz)  
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Resources Used:  
+[Shazam API](https://rapidapi.com/apidojo/api/shazam/)  
+
+## License
+
+MIT License
