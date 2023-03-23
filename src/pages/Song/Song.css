@@ -76,7 +76,8 @@
 .player {
   display: block;
   width: 100%;
-  margin: 520px 0;
+  position: fixed;
+  bottom: 0;
 }
 
 .player-control {
