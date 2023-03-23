@@ -6,11 +6,6 @@ form{
   justify-content: end;
   position: relative;
 }
-/* .fa-solid {
-  display: block;
-  color: red;
-  font-size: 20px;
-} */
 .searchIcon{
   color: rgb(220, 215, 201, 30%);
   position: absolute;
@@ -68,7 +63,6 @@ text-decoration: none;
 padding: 0 10px;
 font-size: 30px;
 }
-
 .homeButton:visited {
 color: antiquewhite;
 }
@@ -85,6 +79,5 @@ color: antiquewhite;
     width: 100%;
     justify-content: space-between;
   }
-
 
   }
