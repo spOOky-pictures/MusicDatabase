@@ -71,8 +71,8 @@ const Song = ({ setSearchQuery }) => {
             <h2>Release Year: {songData.sections[0].metadata[2].text}</h2>
           </div>
         </div>
-        <audio controls preload="none">
-          <source src={songData.hub.actions[1].uri} type="audio/mp4" />
+        <audio className="player" controls preload="none">
+          <source className="player-control" src={songData.hub.actions[1].uri} type="audio/mp4" />
         </audio>
         <h2 className="youtubeHeading" >Watch the video on YouTube!:</h2>
         {filteredSections.length !== 0 && (
