@@ -21,7 +21,7 @@ function App() {
       ),
     },
     {
-      path: "/song/:songName",
+      path: "/song/:songId",
       element: <Song setSearchQuery={setSearchQuery} />,
     },
     {

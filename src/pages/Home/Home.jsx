@@ -9,7 +9,7 @@ import Player from '../../components/Player/Player';
 const Home = ({ searchQuery, setSearchQuery }) => {
   const [searchResults, setSearchResults] = useState();
   const getResults = async () => {
-    const RAPID_API_KEY = "8be18867b6msh6fc8d6aad5acc56p1976f9jsnf9fe02c89bd2";
+    const RAPID_API_KEY = "7b3e3a16eemsh1d5ca9221cc5af1p13e3dajsnae28b950f9b1";
     const options = {
       method: "GET",
       headers: {
@@ -32,9 +32,9 @@ const Home = ({ searchQuery, setSearchQuery }) => {
   return (
     <div>
       <SearchBar updateSearchQuery={setSearchQuery} />
-      <h1>Results Page</h1>
       {searchResults && (
         <>
+          <h1>Artist:</h1>
           <Grid>
             {searchResults?.artists?.hits.map((artist, index) => (
               <ResultsCard
@@ -46,6 +46,7 @@ const Home = ({ searchQuery, setSearchQuery }) => {
               />
             ))}
           </Grid>
+          <h1>Tracks:</h1>
           <Grid>
             {searchResults?.tracks?.hits.map((track, index) => (
               <ResultsCard
@@ -59,9 +60,6 @@ const Home = ({ searchQuery, setSearchQuery }) => {
           </Grid>
         </>
       )}
-      <Container className="main-content">
-        <Player title="This is an artist" subtitle="This is the song"/>
-      </Container>
     </div>
   );
 };
